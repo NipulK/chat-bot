@@ -82,7 +82,6 @@ body{
 .input-box{
     background: whitesmoke;
     padding: 10px;
-    align: center;
     display: flex;
     gap: 10px;
 }
