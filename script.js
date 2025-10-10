@@ -18,7 +18,12 @@ sendButton.addEventListener('click', () => {
 
 });
 
-
+// Allow pressing Enter to send message
+userInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        sendButton.click();
+    }
+});
 
 
 
