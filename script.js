@@ -1,3 +1,5 @@
+import { api_key } from './config.js';
+
 const chatbox = document.getElementById('chat-box');
 const userInput = document.getElementById('user-input');
 const sendButton = document.getElementById('send-btn');
@@ -12,7 +14,7 @@ sendButton.addEventListener('click', () => {
     userInput.value = '';
 
     // Simulate bot reply (replace this with actual AI integration)
-    const botmessage = showreply();
+    const botmessage = getrespons(userMessage);
 
     localStorage.setItem('chatHistory', chatbox.innerHTML); // Save chat history
 
@@ -25,7 +27,34 @@ userInput.addEventListener('keypress', (e) => {
     }
 });
 
+// Function to simulate bot response (replace with actual AI logic)
+function getrespons(userMessage) {
+    // Placeholder response logic
+    setTimeout(() => {
+        showreply();
+    }, 1000);
+    
+    const url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key${api_key}';
 
+    try {
+        const response = fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                contents: [{ parts: [{ text: userMessage }] }]
+            })
+        })
+        const data = response.json();
+        console.log(data);
+    }
+    catch (error) {
+        console.error('Error fetching AI response:', error);
+    }
+
+    return "This is a placeholder response."; // Replace with actual response from AI
+}
 
 function appendMessage(senderClass, message) {
 
