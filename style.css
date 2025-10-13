@@ -15,14 +15,15 @@ body{
     align-items: center;
     
     /* https://grabient.com/HQJgnArANKk+1gGYIBYZKQdg0kMA2ARiJggA5yywCpVgwskojhyQqlgtig?style=linearGradient&steps=7&angle=90 */
-    background: linear-gradient(90deg, rgba(164, 116, 81, 1.000) 0.000%, rgba(156, 152, 129, 1.000) 16.667%, rgba(115, 160, 157, 1.000) 33.333%, rgba(59, 137, 154, 1.000) 50.000%, rgba(9, 91, 121, 1.000) 66.667%, rgba(0, 40, 71, 1.000) 83.333%, rgba(0, 1, 22, 1.000) 100.000%)
+/* https://grabient.com/HQNgTAHANMAsEFYZjLKBaADMAzARmi2DAE4QZYTDtY8wNswQSY8B2cvXJh4BE+ui6ZMOXpgRpgiPFC5gc0YJlRA?style=angularSwatches&steps=15&angle=210 */
 
+background: conic-gradient(from 210deg, rgba(187, 168, 150, 1.000) 0.000deg, rgba(187, 168, 150, 1.000) 24.000deg, rgba(173, 164, 149, 1.000) 24.000deg, rgba(173, 164, 149, 1.000) 48.000deg, rgba(158, 158, 146, 1.000) 48.000deg, rgba(158, 158, 146, 1.000) 72.000deg, rgba(142, 151, 142, 1.000) 72.000deg, rgba(142, 151, 142, 1.000) 96.000deg, rgba(127, 143, 137, 1.000) 96.000deg, rgba(127, 143, 137, 1.000) 120.000deg, rgba(112, 135, 131, 1.000) 120.000deg, rgba(112, 135, 131, 1.000) 144.000deg, rgba(100, 126, 125, 1.000) 144.000deg, rgba(100, 126, 125, 1.000) 168.000deg, rgba(89, 116, 117, 1.000) 168.000deg, rgba(89, 116, 117, 1.000) 192.000deg, rgba(82, 107, 109, 1.000) 192.000deg, rgba(82, 107, 109, 1.000) 216.000deg, rgba(78, 97, 101, 1.000) 216.000deg, rgba(78, 97, 101, 1.000) 240.000deg, rgba(78, 88, 91, 1.000) 240.000deg, rgba(78, 88, 91, 1.000) 264.000deg, rgba(81, 79, 82, 1.000) 264.000deg, rgba(81, 79, 82, 1.000) 288.000deg, rgba(87, 71, 72, 1.000) 288.000deg, rgba(87, 71, 72, 1.000) 312.000deg, rgba(97, 64, 61, 1.000) 312.000deg, rgba(97, 64, 61, 1.000) 336.000deg, rgba(109, 58, 51, 1.000) 336.000deg 360.000deg)
 }
 
 .chat-containor{
     height: 600px;
     width: 400px;
-    background-color: white;
+    background-color: whitesmoke;
     border: black 0px solid;
     border-radius: 10px;
     box-shadow: 0px 10px 15px rgba(0,0,0,0.2);
@@ -53,6 +54,7 @@ body{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    background: #E5DDD5;
 }
 
 .message{
@@ -89,7 +91,7 @@ body{
 .input-box input{
     flex: 1;
     padding: 10px;
-    border: 1px solid lightgrey;
+    border: 1px solid gray;
     border-radius: 20px;
     outline: none;
     font-size: 14px;
@@ -97,6 +99,7 @@ body{
 
 /* Style for send button */
 #send-btn {
+  background-color: #a3b8b6;
   color: white;
   border: none;
   border-radius: 20px;
