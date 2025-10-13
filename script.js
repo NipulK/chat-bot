@@ -2,6 +2,7 @@ import { api_key } from './config.js';
 
 //you need to make your own api_key , make a seperate config.js file and store the key there and import it here
 
+
 const chatbox = document.getElementById('chat-box');
 const userInput = document.getElementById('user-input');
 const sendButton = document.getElementById('send-btn');

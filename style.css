@@ -8,7 +8,15 @@
 }
 
 /* Body styles with animated gradient background */
-body{ height: 100vh; width: 100vw; display: flex; justify-content: center; align-items: center; /* https://grabient.com/HQJgnArANKk+1gGYIBYZKQdg0kMA2ARiJggA5yywCpVgwskojhyQqlgtig?style=linearGradient&steps=7&angle=90 */ /* https://grabient.com/HQNgTAHANMAsEFYZjLKBaADMAzARmi2DAE4QZYTDtY8wNswQSY8B2cvXJh4BE+ui6ZMOXpgRpgiPFC5gc0YJlRA?style=angularSwatches&steps=15&angle=210 */ background: conic-gradient(from 210deg, rgba(187, 168, 150, 1.000) 0.000deg, rgba(187, 168, 150, 1.000) 24.000deg, rgba(173, 164, 149, 1.000) 24.000deg, rgba(173, 164, 149, 1.000) 48.000deg, rgba(158, 158, 146, 1.000) 48.000deg, rgba(158, 158, 146, 1.000) 72.000deg, rgba(142, 151, 142, 1.000) 72.000deg, rgba(142, 151, 142, 1.000) 96.000deg, rgba(127, 143, 137, 1.000) 96.000deg, rgba(127, 143, 137, 1.000) 120.000deg, rgba(112, 135, 131, 1.000) 120.000deg, rgba(112, 135, 131, 1.000) 144.000deg, rgba(100, 126, 125, 1.000) 144.000deg, rgba(100, 126, 125, 1.000) 168.000deg, rgba(89, 116, 117, 1.000) 168.000deg, rgba(89, 116, 117, 1.000) 192.000deg, rgba(82, 107, 109, 1.000) 192.000deg, rgba(82, 107, 109, 1.000) 216.000deg, rgba(78, 97, 101, 1.000) 216.000deg, rgba(78, 97, 101, 1.000) 240.000deg, rgba(78, 88, 91, 1.000) 240.000deg, rgba(78, 88, 91, 1.000) 264.000deg, rgba(81, 79, 82, 1.000) 264.000deg, rgba(81, 79, 82, 1.000) 288.000deg, rgba(87, 71, 72, 1.000) 288.000deg, rgba(87, 71, 72, 1.000) 312.000deg, rgba(97, 64, 61, 1.000) 312.000deg, rgba(97, 64, 61, 1.000) 336.000deg, rgba(109, 58, 51, 1.000) 336.000deg 360.000deg) }
+body{ 
+    height: 100vh; 
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    /* https://grabient.com/HQJgnArANKk+1gGYIBYZKQdg0kMA2ARiJggA5yywCpVgwskojhyQqlgtig?style=linearGradient&steps=7&angle=90 */ /* https://grabient.com/HQNgTAHANMAsEFYZjLKBaADMAzARmi2DAE4QZYTDtY8wNswQSY8B2cvXJh4BE+ui6ZMOXpgRpgiPFC5gc0YJlRA?style=angularSwatches&steps=15&angle=210 */ 
+    background: conic-gradient(from 210deg, rgba(187, 168, 150, 1.000) 0.000deg, rgba(187, 168, 150, 1.000) 24.000deg, rgba(173, 164, 149, 1.000) 24.000deg, rgba(173, 164, 149, 1.000) 48.000deg, rgba(158, 158, 146, 1.000) 48.000deg, rgba(158, 158, 146, 1.000) 72.000deg, rgba(142, 151, 142, 1.000) 72.000deg, rgba(142, 151, 142, 1.000) 96.000deg, rgba(127, 143, 137, 1.000) 96.000deg, rgba(127, 143, 137, 1.000) 120.000deg, rgba(112, 135, 131, 1.000) 120.000deg, rgba(112, 135, 131, 1.000) 144.000deg, rgba(100, 126, 125, 1.000) 144.000deg, rgba(100, 126, 125, 1.000) 168.000deg, rgba(89, 116, 117, 1.000) 168.000deg, rgba(89, 116, 117, 1.000) 192.000deg, rgba(82, 107, 109, 1.000) 192.000deg, rgba(82, 107, 109, 1.000) 216.000deg, rgba(78, 97, 101, 1.000) 216.000deg, rgba(78, 97, 101, 1.000) 240.000deg, rgba(78, 88, 91, 1.000) 240.000deg, rgba(78, 88, 91, 1.000) 264.000deg, rgba(81, 79, 82, 1.000) 264.000deg, rgba(81, 79, 82, 1.000) 288.000deg, rgba(87, 71, 72, 1.000) 288.000deg, rgba(87, 71, 72, 1.000) 312.000deg, rgba(97, 64, 61, 1.000) 312.000deg, rgba(97, 64, 61, 1.000) 336.000deg, rgba(109, 58, 51, 1.000) 336.000deg 360.000deg) 
+}
 /**/
 
 /* Chat container styles */
