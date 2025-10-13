@@ -5,7 +5,7 @@ const userInput = document.getElementById('user-input');
 const sendButton = document.getElementById('send-btn');
 
 // Function to append messages to the chat box
-sendButton.addEventListener('click' , ()=> {
+sendButton.addEventListener('click' ,async ()=> {
     const userMessage = userInput.value.trim();
     if(userMessage === '') return;
     
@@ -14,7 +14,7 @@ sendButton.addEventListener('click' , ()=> {
     userInput.value = '';
 
     // Await bot reply (actual AI integration)
-    const botmessage =  getrespons(userMessage);
+    const botmessage =  await getrespons(userMessage);
 
     localStorage.setItem('chatHistory', chatbox.innerHTML); // Save chat history
 })
@@ -27,14 +27,15 @@ userInput.addEventListener('keypress', (e) => {
 })
 
 // Function to simulate bot response (replace with actual AI logic)
-function getrespons(userMessage) {
+async function getrespons(userMessage) {
+    
     showreply(); // You can keep this or move it after getting the response
 
     // Make sure you import or define api_key
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${api_key}`;
 
     try {
-        const response =  fetch(url, {
+        const response = await fetch(url, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -42,10 +43,14 @@ function getrespons(userMessage) {
             })
         })
          
-        const data =  response.json();
-        console.log(data); // This will log the actual response
-        
-    } catch (error) {
+        const data = await response.json();
+        console.log(data); // This will log the actual response 
+        const botReply = data?.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I didn't understand.";
+        return botReply;
+    }
+     catch (error) {
+        console.error('Error fetching AI response:', error);
+        return "Sorry, there was an error processing your request.";
     }
 }
 
@@ -59,11 +64,11 @@ function appendMessage(senderClass, message) {
 
 }
 
-function showreply() {
+function showreply(message) {
 
     const replyDiv = document.createElement('div');   // Create bot message div
     replyDiv.classList.add('message', 'bot-chat');   // Bot message class
-    replyDiv.textContent = "Hi"; // Placeholder reply
+    replyDiv.textContent = message || ""; // Placeholder reply
     chatbox.appendChild(replyDiv);             // Append bot message
     chatbox.scrollTop = chatbox.scrollHeight; // Auto scroll to the bottom
 
