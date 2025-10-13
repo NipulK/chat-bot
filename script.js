@@ -29,7 +29,6 @@ userInput.addEventListener('keypress', (e) => {
 // Function to simulate bot response (replace with actual AI logic)
 async function getrespons(userMessage) {
     
-    showreply(); // You can keep this or move it after getting the response
 
     // Make sure you import or define api_key
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${api_key}`;
@@ -45,8 +44,15 @@ async function getrespons(userMessage) {
          
         const data = await response.json();
         console.log(data); // This will log the actual response 
+
+        if (!response.ok) {
+            throw new Error(data.error?.message || 'API request failed');
+        }
+
         const botReply = data?.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I didn't understand.";
+        showreply(botReply);
         return botReply;
+
     }
      catch (error) {
         console.error('Error fetching AI response:', error);
