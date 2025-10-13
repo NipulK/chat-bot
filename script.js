@@ -5,7 +5,7 @@ const userInput = document.getElementById('user-input');
 const sendButton = document.getElementById('send-btn');
 
 // Function to append messages to the chat box
-sendButton.addEventListener('click', () => {
+sendButton.addEventListener('click' , ()=> {
     const userMessage = userInput.value.trim();
     if(userMessage === '') return;
     
@@ -13,47 +13,40 @@ sendButton.addEventListener('click', () => {
     appendMessage('user-chat', userMessage);
     userInput.value = '';
 
-    // Simulate bot reply (replace this with actual AI integration)
-    const botmessage = getrespons(userMessage);
+    // Await bot reply (actual AI integration)
+    const botmessage =  getrespons(userMessage);
 
     localStorage.setItem('chatHistory', chatbox.innerHTML); // Save chat history
-
-});
+})
 
 // Allow pressing Enter to send message
 userInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
-        sendButton.click();
+        sendButton.click()
     }
-});
+})
 
 // Function to simulate bot response (replace with actual AI logic)
 function getrespons(userMessage) {
-    // Placeholder response logic
-    setTimeout(() => {
-        showreply();
-    }, 1000);
-    
-    const url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key${api_key}';
+    showreply(); // You can keep this or move it after getting the response
+
+    // Make sure you import or define api_key
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${api_key}`;
 
     try {
-        const response = fetch(url, {
+        const response =  fetch(url, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
                 contents: [{ parts: [{ text: userMessage }] }]
             })
         })
-        const data = response.json();
-        console.log(data);
+         
+        const data =  response.json();
+        console.log(data); // This will log the actual response
+        
+    } catch (error) {
     }
-    catch (error) {
-        console.error('Error fetching AI response:', error);
-    }
-
-    return "This is a placeholder response."; // Replace with actual response from AI
 }
 
 function appendMessage(senderClass, message) {
