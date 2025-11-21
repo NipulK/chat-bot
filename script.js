@@ -6,6 +6,19 @@ import { api_key } from './config.js';
 const chatbox = document.getElementById('chat-box');
 const userInput = document.getElementById('user-input');
 const sendButton = document.getElementById('send-btn');
+const themeToggle = document.getElementById('theme-toggle');
+
+// Dark mode toggle functionality
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const isDarkMode = document.body.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', isDarkMode);
+});
+
+// Load dark mode preference
+if (localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark-mode');
+}
 
 // Function to append messages to the chat box
 sendButton.addEventListener('click' ,async ()=> {
