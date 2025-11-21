@@ -20,8 +20,9 @@ body {
     overflow: hidden;
 }
 
-/* Animated wave effect */
-body::before {
+/* Animated wave effect - light mode only */
+/* (.dark-mode) is dark mode */
+body:not(.dark-mode)::before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -40,7 +41,7 @@ body::before {
     z-index: 0;
 }
 
-body::after {
+body:not(.dark-mode)::after {
     content: '';
     position: absolute;
     bottom: 0;
